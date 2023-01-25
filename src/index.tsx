@@ -13,6 +13,11 @@ function Content() {
     )
 }
 
+// const Content = () => {
+//   return ()
+
+// }
+
 //! Component
 function App() {
     return (
