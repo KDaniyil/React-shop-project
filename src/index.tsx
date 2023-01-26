@@ -1,7 +1,7 @@
 import { type } from '@testing-library/user-event/dist/type'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Content from './Content'
+import { Content } from './Content'
 
 interface ITItleProps {
     text: string
