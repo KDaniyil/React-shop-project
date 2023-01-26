@@ -1,29 +1,25 @@
+import { type } from '@testing-library/user-event/dist/type'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Content from './Content'
 
-function Title() {
-    return <h1>Hello React</h1>
-}
-function Content() {
-    return (
-        <React.Fragment>
-            <p>My name is Daniyil</p>
-            <p>I love React</p>
-        </React.Fragment>
-    )
+interface ITItleProps {
+    text: string
 }
 
-// const Content = () => {
-//   return ()
-
-// }
+const Title = (props: ITItleProps) => {
+    console.log(props)
+    return <h1>Hello {props.text}</h1>
+}
 
 //! Component
 function App() {
     return (
         <>
-            <Title />
-            <Content />
+            <Title text="React" />
+            <Title text="JS" />
+            <Title text="TS" />
+            <Content text1="I love React" text2="I love TS" year={2023} />
         </>
     )
 }
