@@ -1,12 +1,12 @@
 
-type ProductProps = {
+type Product = {
     title: string
     description: string
     type: string
     capacity: string
     price: number
 }
-const productsArray : ProductProps[] = [
+const productsArray : Product[] = [
     {
         title: 'iPhone 14 Pro',
         description: 'This is iPhone 14 Pro',
