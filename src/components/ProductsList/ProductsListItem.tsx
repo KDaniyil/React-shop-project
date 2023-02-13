@@ -29,7 +29,9 @@ const ProductsListItem = ({
         setCount(count + 1)
     }
     const onDecrement = () => {
-        setCount(count - 1)
+        if (count > 1) {
+            setCount(count - 1)
+        }
     }
     return (
         <Card variant="outlined">
@@ -45,17 +47,13 @@ const ProductsListItem = ({
                 <div className="product-quantity">
                     <Button
                         variant="outlined"
-                        disabled={true && count === 1}
+                        // disabled={true && count === 1}
                         onClick={() => onDecrement()}
                     >
                         -
                     </Button>
                     <TextField size="small" value={count}></TextField>
-                    <Button
-                        variant="outlined"
-                        disabled={true && count > 8}
-                        onClick={() => onIncrement()}
-                    >
+                    <Button variant="outlined" onClick={() => onIncrement()}>
                         +
                     </Button>
                 </div>
