@@ -27,10 +27,10 @@ const ProductsListItem = ({
     const [count, setCount] = useState<number>(1)
     const [sum, setSum] = useState<number>(0)
     const onIncrement = () => {
-        setCount(count + 1)
+        setCount((prevState) => prevState + 1)
     }
     const onDecrement = () => {
-        setCount(count - 1)
+        setCount((prevState) => prevState + 1)
     }
     const addToCart = (price: number) => {
         setSum(sum + price)
