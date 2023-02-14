@@ -32,9 +32,6 @@ const ProductsListItem = ({
     const onDecrement = () => {
         setCount((prevState) => prevState + 1)
     }
-    const addToCart = (price: number) => {
-        setSum(sum + price)
-    }
     return (
         <Card variant="outlined">
             <CardContent>
@@ -65,9 +62,7 @@ const ProductsListItem = ({
                 </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
-                <Button variant="outlined" onClick={() => addToCart(price)}>
-                    Add to cart
-                </Button>
+                <Button variant="outlined">Add to cart</Button>
             </CardActions>
         </Card>
     )
