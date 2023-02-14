@@ -25,11 +25,15 @@ const ProductsListItem = ({
     image,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
+    const [sum, setSum] = useState<number>(0)
     const onIncrement = () => {
         setCount(count + 1)
     }
     const onDecrement = () => {
         setCount(count - 1)
+    }
+    const addToCart = (price: number) => {
+        setSum(sum + price)
     }
     return (
         <Card variant="outlined">
@@ -45,7 +49,7 @@ const ProductsListItem = ({
                 <div className="product-quantity">
                     <Button
                         variant="outlined"
-                        disabled={true && count === 1}
+                        disabled={count <= 1}
                         onClick={() => onDecrement()}
                     >
                         -
@@ -53,7 +57,7 @@ const ProductsListItem = ({
                     <TextField size="small" value={count}></TextField>
                     <Button
                         variant="outlined"
-                        disabled={true && count > 8}
+                        disabled={count >= 10}
                         onClick={() => onIncrement()}
                     >
                         +
@@ -61,7 +65,9 @@ const ProductsListItem = ({
                 </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
-                <Button variant="outlined">Add to cart</Button>
+                <Button variant="outlined" onClick={() => addToCart(price)}>
+                    Add to cart
+                </Button>
             </CardActions>
         </Card>
     )

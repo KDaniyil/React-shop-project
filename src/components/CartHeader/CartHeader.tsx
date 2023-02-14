@@ -1,9 +1,13 @@
-type Props = {}
-function CartHeader({}: Props) {
+import { CartDataProps } from 'container/App/App'
+
+type Props = {
+    cartData: CartDataProps
+}
+function CartHeader({ cartData }: Props) {
     return (
         <div>
-            <div>0</div>
-            <div>$0</div>
+            <div>{cartData.totalCount}</div>
+            <div>${cartData.totalPrice}</div>
         </div>
     )
 }
