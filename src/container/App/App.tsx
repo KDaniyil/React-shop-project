@@ -27,7 +27,7 @@ const App = (props: Props) => {
             <button onClick={() => addProductToCart(5, 500)}>
                 Add to cart
             </button>
-            <Main />
+            <Main addProductToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
     )
