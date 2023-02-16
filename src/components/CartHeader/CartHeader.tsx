@@ -1,13 +1,16 @@
-import { CartDataProps } from 'container/App/App'
+import { ProductsInCart } from 'container/App/App'
 
 type Props = {
-    cartData: CartDataProps
+    productsInCart: ProductsInCart
 }
-function CartHeader({ cartData }: Props) {
+function CartHeader({ productsInCart }: Props) {
     return (
         <div>
-            <div>{cartData.totalCount}</div>
-            <div>${cartData.totalPrice}</div>
+            {Object.keys(productsInCart).map((productId) => (
+                <div key={productId}>
+                    {productId} : {productsInCart[parseInt(productId)]}
+                </div>
+            ))}
         </div>
     )
 }
