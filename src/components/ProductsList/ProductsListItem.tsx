@@ -34,7 +34,7 @@ const ProductsListItem = ({
         setCount((prevState) => prevState + 1)
     }
     const onDecrement = () => {
-        setCount((prevState) => prevState + 1)
+        setCount((prevState) => prevState - 1)
     }
     return (
         <Card variant="outlined">

@@ -1,3 +1,4 @@
+import CartTotal from 'components/CartTotal/CartTotal'
 import { ProductsInCart } from 'container/App/App'
 import productsArray, { getProductsObject, Product } from 'utils/productsArray'
 type Props = {
@@ -18,6 +19,7 @@ function CartHeader({
                     {productsInCart[parseInt(productId)]}
                 </div>
             ))}
+            <CartTotal productsInCart={productsInCart} />
         </div>
     )
 }
