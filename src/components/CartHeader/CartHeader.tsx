@@ -1,14 +1,21 @@
 import { ProductsInCart } from 'container/App/App'
-
+import productsArray, { getProductsObject, Product } from 'utils/productsArray'
 type Props = {
     productsInCart: ProductsInCart
+    productsObject?: {
+        [id: number]: Product
+    }
 }
-function CartHeader({ productsInCart }: Props) {
+function CartHeader({
+    productsInCart,
+    productsObject = getProductsObject(productsArray),
+}: Props) {
     return (
         <div>
             {Object.keys(productsInCart).map((productId) => (
                 <div key={productId}>
-                    {productId} : {productsInCart[parseInt(productId)]}
+                    {productsObject[parseInt(productId)].title} :{' '}
+                    {productsInCart[parseInt(productId)]}
                 </div>
             ))}
         </div>
