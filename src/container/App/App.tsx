@@ -5,7 +5,7 @@ import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from 'pages/Home/Home'
-import { Container } from '@mui/material'
+import { Button, Container } from '@mui/material'
 import CartPage from 'pages/CartPage/CartPage'
 
 type Props = {}
@@ -25,10 +25,20 @@ const App = (props: Props) => {
             [id]: (prevState[id] || 0) + count,
         }))
     }
+    const removeProductFromCart = (id: number) => {
+        setProductsInCart((prevState) => {
+            let prevProductsInCart = { ...prevState }
+            delete prevProductsInCart[id]
+            return prevProductsInCart
+        })
+    }
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
+            <button onClick={() => removeProductFromCart(1)}>
+                Delete product
+            </button>
             <Container sx={{ padding: '60px 0' }}>
                 <Routes>
                     <Route
