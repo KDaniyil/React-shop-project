@@ -7,8 +7,15 @@ import CartTotal from 'components/CartTotal/CartTotal'
 type Props = {
     productsInCart: ProductsInCart
     removeProductFromCart: (id: number) => void
+    incrementQuantityProductInCart: (id: number) => void
+    changeProductQuantity: (id: number, count: number) => void
 }
-const CartPage = ({ productsInCart, removeProductFromCart }: Props) => {
+const CartPage = ({
+    productsInCart,
+    removeProductFromCart,
+    incrementQuantityProductInCart,
+    changeProductQuantity,
+}: Props) => {
     return (
         <div>
             <Typography
@@ -25,6 +32,10 @@ const CartPage = ({ productsInCart, removeProductFromCart }: Props) => {
                     productsInCart={productsInCart}
                     CartItem={CartProductListItemExtended}
                     removeProductFromCart={removeProductFromCart}
+                    incrementQuantityProductInCart={
+                        incrementQuantityProductInCart
+                    }
+                    changeProductQuantity={changeProductQuantity}
                 />
             </Grid>
             <CartTotal productsInCart={productsInCart} />
