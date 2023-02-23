@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from 'pages/Home/Home'
 import { Container } from '@mui/material'
-import CartPage from 'pages/Cart/CartPage'
+import CartPage from 'pages/CartPage/CartPage'
 
 type Props = {}
 
