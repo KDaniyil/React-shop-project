@@ -34,7 +34,6 @@ const ProductsList = ({ addProductToCart }: Props) => {
                                     price={price}
                                     image={image}
                                     id={id}
-                                    addProductToCart={addProductToCart}
                                 />
                             </Grid>
                         )

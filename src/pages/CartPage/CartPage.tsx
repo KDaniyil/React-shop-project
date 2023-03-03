@@ -3,19 +3,19 @@ import { ProductsInCart } from 'container/App/App'
 import CartProductListItemExtended from 'components/CartProductList/CartProductListItemExtended'
 import { Grid, Typography } from '@mui/material'
 import CartTotal from 'components/CartTotal/CartTotal'
+import { useAppSelector } from 'redux/hooks'
 
 type Props = {
-    productsInCart: ProductsInCart
     removeProductFromCart: (id: number) => void
     incrementQuantityProductInCart: (id: number) => void
     changeProductQuantity: (id: number, count: number) => void
 }
 const CartPage = ({
-    productsInCart,
     removeProductFromCart,
     incrementQuantityProductInCart,
     changeProductQuantity,
 }: Props) => {
+    const productsInCart = useAppSelector((state) => state.productsInCart)
     return (
         <div>
             <Typography
