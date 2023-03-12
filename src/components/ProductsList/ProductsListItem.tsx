@@ -27,7 +27,6 @@ const ProductsListItem = ({
     id,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
-    const [sum, setSum] = useState<number>(0)
     const onIncrement = () => {
         setCount((prevState) => prevState + 1)
     }

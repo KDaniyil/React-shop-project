@@ -1,8 +1,9 @@
-import { ProductsInCart } from 'container/App/App'
 import productsArray, { getProductsObject, Product } from 'utils/productsArray'
 
 type Props = {
-    productsInCart: ProductsInCart
+    productsInCart: {
+        [id: number]: number
+    }
     productsObject?: {
         [id: number]: Product
     }

@@ -7,12 +7,8 @@ import './Header.scss'
 import Logo from 'components/Logo/Logo'
 import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/CartHeader/CartHeader'
-import { ProductsInCart } from 'container/App/App'
-type Props = {
-    productsInCart: ProductsInCart
-}
 
-const Header = ({ productsInCart }: Props) => {
+const Header = () => {
     return (
         <AppBar className="bgAppBar" position="static">
             <Container>

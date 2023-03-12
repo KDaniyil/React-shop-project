@@ -1,16 +1,14 @@
-import { ProductsInCart } from 'container/App/App'
 import productsArray, { getProductsObject, Product } from 'utils/productsArray'
 import CartProductListItem from './CartProductListItem'
 
 type Props = {
-    productsInCart: ProductsInCart
+    productsInCart: {
+        [id: number]: number
+    }
     productsObject?: {
         [id: number]: Product
     }
     CartItem?: any
-    removeProductFromCart?: (id: number) => void
-    incrementQuantityProductInCart?: (id: number) => void
-    changeProductQuantity?: (id: number, count: number) => void
 }
 const CartProductList = ({
     productsInCart,
