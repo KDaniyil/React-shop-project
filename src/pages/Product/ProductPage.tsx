@@ -21,6 +21,9 @@ const ProductPage = ({
                 <img src={product.image} alt={product.title} />
             </div>
             <div>Description:{product.description}</div>
+            <div dangerouslySetInnerHTML={{
+                __html: productsObject[parseInt(id!)].fullDesc
+            }}></div>
             <div>Capacity:{product.capacity}</div>
             <div>Type:{product.type}</div>
             <div>Price:{product.price} $</div>
