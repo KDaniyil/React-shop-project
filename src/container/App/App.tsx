@@ -8,10 +8,19 @@ import { Container } from '@mui/material'
 import CartPage from 'pages/CartPage/CartPage'
 import CheckoutPage from 'pages/Checkout/CheckoutPage'
 import ProductPage from 'pages/Product/ProductPage'
+import { useAppDispatch } from 'redux/hooks'
+import { useEffect } from 'react'
+import { fetchProducts } from 'redux/productsReducer'
 
 type Props = {}
 
 const App = (props: Props) => {
+
+    const dispatch = useAppDispatch()
+    
+    useEffect(()=>{
+        dispatch(fetchProducts())
+    })
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
